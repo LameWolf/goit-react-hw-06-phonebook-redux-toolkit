@@ -11,13 +11,7 @@ const contactsSlice = createSlice({
   reducers: {
     addContacts: {
       reducer(state, action) {
-        const isExist = state.list.find(
-          contact => contact.name === action.payload.name
-        );
-
-        if (!isExist) {
-          state.list.push(action.payload);
-        }
+        state.list.push(action.payload);
       },
       prepare(newContact) {
         return {
